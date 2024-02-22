@@ -1,18 +1,22 @@
 /*Task 1 */
-temperature_celsius = 20;
-temperature_fahrenheit = (temperature_celsius * 9) / 5 + 32;
-console.log(temperature_fahrenheit);
+let temperatureCelsius = 20;
+let temperatureFahrenheit = (temperatureCelsius * 9) / 5 + 32;
+console.log(temperatureFahrenheit);
 /*Task 2 */
-days_in_month = 30;
-hours_in_day = 24;
-minutes_in_hour = 60;
-total_hours = days_in_month * hours_in_day;
-total_minutes = total_hours * minutes_in_hour;
-console.log(total_minutes, total_hours);
+let daysInMonth = 30;
+let hoursInDay = 24;
+let minutesInHour = 60;
+let totalHours = daysInMonth * hoursInDay;
+let totalMinutes = totalHours * minutesInHour;
+console.log(totalMinutes, totalHours);
+
 /*Task 3 */
-const health = 100;
-const energy = 50;
-console.log(health - energy);
+const playerHealth = 100;
+const playerEnergy = 50;
+const newPlayerHealth = playerHealth - 10;
+const newPlayerEnergy = playerEnergy - 10;
+console.log(newPlayerHealth, newPlayerEnergy);
+
 /*Task 4 */
 const purchaseAmount = 1000;
 let discount = purchaseAmount * 0.1;
