@@ -1,4 +1,4 @@
-/*Task1*/
+/*Task1
 const inputName = prompt("Введіть ім'я:");
 const inputAge = prompt("Введіть вік:");
 const checkButton = confirm("Пітвердити?");
@@ -7,29 +7,26 @@ if (inputName && inputAge){
 } else {
     console.log("Не всі поля заповнені")
 }
-/*Task 2 */
+/*Task 2 
 const num = parseInt(prompt("Введіть цифру :"))
 const num2 = parseInt(prompt("Введіть цифру :"))
-const num3 = (num && num2 >= 10)
-if (num3 ){
+const num3 = num + num2  
+if (num3 >=10 ){
   alert("Сума більша за 10")  
 } else {
-    alert("Сума менша 10")
+    alert("Сума менша або дорівнює 10")
 }
-/*Task3 */
+/*Task3 
 const textCorrect = prompt("Введіть слово:")
 const checkText = confirm("Пітвердити?")
-if(textCorrect === "JavaScript"){
+if(textCorrect.includes("JavaScript") ){
     alert("Текст містить слово JavaScript")
 }else {
     alert("Текст не містить слово JavaScript")
 }
 /*Task 4 */
 const gameAge = parseInt(prompt("Введіть вік :"))
-const gameAge2 = parseInt(prompt("Введіть вік :"))
-const gameAge3 = (gameAge && gameAge2 >= 10)
-const gameAge4 = (gameAge && gameAge2 <= 20)
-if (gameAge3 && gameAge4){
+if (gameAge >= 10 && gameAge <= 20){
     alert("Число входить в діапазон від 10 до 20");
 } else {
     alert("Число не входить в діапазон від 10 до 20")
