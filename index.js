@@ -11,27 +11,21 @@ switch(select) {
  case '3':
  alert("Ви вибрали сік")
  break;
+ default : 
+ alert("Ви неправильно обрали !")
 }
 /*Task 2 */
 const day = prompt("Уведіть день тижня :")
 switch (day) {
 case "Monday" :
-alert ("Робочий день")
-break;
 case "Tuesday" :
+case "Wednesday" :
+case "Thursday" :
+case "Friday" :    
 alert ("Робочий день")
 break;
-case "Wednesday" :
- alert ("Робочий день")
- break;
- case "Thursday" :
- alert ("Робочий день")
- break;
- case "Friday" :
- alert ("Робочий день")
- break;
- default :
- alert ("Вихідний день")
+default :
+alert ("Помилка!")
 
 }
 /*Task 3 */
@@ -47,7 +41,7 @@ case "Вересень":
 alert ("Осінь")
 break;
 default :
-alert ("Інша пори року ");
+alert ("Помилка !");
 }
 /*Task 4 */
 const numberDay = prompt("Введіт номер місяця :")
@@ -61,38 +55,41 @@ break;
 case "3" :
 alert ("Цей день має 29 день")
 break;
-
+default : 
+alert("Помилка !")
 }
 /*Task 5*/
 const color = prompt("Введіть колір :")
 switch (color){
 case "червоний": 
-alert (`якщо це червоний - стоп`)
+alert (` червоний - стоп`)
 break ;
 case "жовтий": 
-alert (`якщо це жовтий - чекати`)
+alert (`жовтий - чекати`)
 break ;
 case "зелений": 
-alert (`якщо це жовтий - йти`)
+alert (`зелений - йти`)
 break ;
 } 
 /*Task 6 */
 const num1 = parseInt(prompt("Введіть цифру:"))
 const num2 = parseInt(prompt("Введіть цифру:"))
-const num3 = prompt("Введіть  дію:")
-const num5 = confirm("Можливість ділення на нуль")
-let num4 ;
-switch (num3) {
+const action = prompt("Введіть  дію:")
+if(num2 === 0) {
+ alert("Помилка !")
+ }
+let example ;
+switch (action) {
 case "+" : 
-num4 = alert(num1 + num2);
+example = alert(num1 + num2);
 break;
 case "-" : 
-num4 = alert(num1 - num2);
+example = alert(num1 - num2);
 break;
 case "*":
-num4 = alert(num1 * num2);
+example = alert(num1 * num2);
 break;
 case "/":
-num4 = alert(num1 / num2);
+example = alert(num1 / num2);
 break;
 }
