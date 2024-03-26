@@ -1,21 +1,24 @@
-/*Task 1 */
+/*Task 1 
 let num = 10 ;
 while (num) {
 alert(num);
 num-=1;
 }
+
 /*Task 2 */
 for(let i = 2 ; i < 20 ; i+=1) {
 if (i%2==1) {
 continue;
 }
+console.log(i)
 }
 /*Task 3*/
-for (let i = 0 ; i < 63; i+=7){
- if(i*7==1){
- }
- console.log(i)
+
+for (let i = 0 ; i < 63; i+=1){
+
+ console.log(i*7)
 }
+
 /*Task 7 */
 let num2 = 20 ;
 while (num2){
