@@ -33,7 +33,7 @@ console.log(num2)
 let num3 = 20;
 while (num3){
 num3-=1;
-if(num3 % 3==1){
+if(num3 % 3==0){
  continue;
 }
 console.log(num3)
