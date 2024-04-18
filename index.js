@@ -32,7 +32,7 @@ let max = 0;
 for(let i = 0; i < modification.length;i++){
 all = modification[i] +`-`+ modification[i].length
 console.log(all)
-max = Math.max(max, modification[i].length)
+max = Math.max(max, modification[i].length )
 
 
 }
@@ -63,29 +63,59 @@ findLongestWord(stringAsk)
 }
 checkForSpam(message)
 /*Task 6 */
-const ask = prompt("Введіть число:")
-let input = ask;
-const numbers = [] + input;
-function add(numbers){
-for(let i = 0 ; i <numbers.length;i++){
-total = numbers[i].length
-alert("Загальна сума чисел " + total)
-}
-}
-add(numbers)
 
+const numbers = [];
+let total = 0;
+function add(){
+while(true) {
+let input = prompt("Введіть число:")
+if (input === null) {
+  break;
+}
+  
+}
+for(let i =0 ; i < numbers.length;i++){
+total += numbers[i]
+
+}
+if (numbers.length > 0) {
+  console.log(`Загальна сума чисел дорівнює ${total}`);
+} 
+}
+add()
 /*Task 7*/
-function isLoginValid(login) {
-let m = login.length
-if(m >= 4 && m <= 16){
-console.log(true)
-} else {
-    console.log(false)
+const logins = ['Mango','Ajax','Poly','wexter','skewler']
+const login = prompt("Введіть рядок")
+function isLoginValid(login){
+  
+  if (login.length >= 4 && login.length <= 16){
+    return true;
+} 
+return false;
 }
+isLoginValid(login)
+const allLogins = ['nikvan','rainyday','anana']
 
-}
-allLogins = []
 function isLoginUnique(allLogins, login) {
-
+if (!allLogins.includes(login)){
+return true;
 }
-/*Перевіряйте поки що до 5 , 6 , 7 зроблю трішки пізніше через те що я не дуже розумію ці 2 останні завдання */
+return false;
+}
+isLoginUnique(allLogins,'nikvan')
+
+function addLogin(allLogins, login) {
+  allLogins.push(login)
+
+ if(!isLoginValid(login)){
+  console.log('Помилка! Логін повинен бути від 4 до 16 символів')
+ }  
+ 
+ else if (!isLoginUnique(login)){
+  console.log('Такий логін уже використовується!')
+ } else {
+  allLogins.push(login)
+  console.log("Логін успішно доданий!")
+ }
+}
+addLogin(allLogins, 'rainyday')
