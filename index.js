@@ -5,19 +5,21 @@ console.log(num[1]);
 console.log(num);
 /*Task 2 */
 const fruits = ['Orange','Banana','Grape'];
-fruits[3]= 'Apple';
-console.log(fruits[3]);
+fruits.push('Apple') 
 console.log(fruits)
 /*Task 3 */
 const number = [2,8,1]
-console.log(number[0] + number[1] + number[2])
-
+let total = 0
+for(let i = 0 ;i<number.length;i++){
+total += number[i]
+}
+console.log(total)
 /*Task 4 */
 const numeral = [1,2,3,4,5]
-for(let i = 0 ; i < numeral; i += 1){
+for(let i = 0 ; i < numeral.length; i += 1){
 console.log(numeral[i])
 }
-/*Task 5 */ 
+/*Task 5 */
 const numbers = ['Pen','Marker','Pencilbox','Scissors','Eraser']
 for (let i =0 ; i< numbers.length; i++){
  if (numbers[i].length > 5){
@@ -26,9 +28,12 @@ for (let i =0 ; i< numbers.length; i++){
 }
 /*Task 6 */
 const digit =[1,2,3,4,5,6,7,8,9,10];
-const maxValue = Math.max.apply(null,digit)
-console.log(maxValue)
-/*Я використала null для того щоб не було безкінечність*/
+for(let i = 0; i< digit.length;i++){
+amount = Math.max(digit[i])
+
+}
+console.log(amount)
+
 /*Task 7 */
 const numeric = [1,2,3,4,5,6,7,8,9,10]
 for(let i = 0 ; i < numeric.length; i++ ){
@@ -36,3 +41,7 @@ if (numeric[i]%2 === 0){
 console.log(numeric[i])
 }
 }
+
+
+
+
