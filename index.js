@@ -23,10 +23,10 @@ humidity: 72,
 windSpeed: 23,
 climate(degrees){
 if(degrees < weather.temperature){
-console.log(true)
+return true;
 }
 if(degrees > weather.temperature){
-console.log(false)
+return false;
 }
 },
 
@@ -58,10 +58,10 @@ year: 2009 ,
 rating: 8.2 ,
 grading(){
 if(movie.rating > 8){
-console.log(true)
+return true;
 }
 if(movie.rating < 8){
-console.log(false)
+return false;
 }
 if (movie.rating > 8){
 alert("Крутий фільм")
