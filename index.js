@@ -28,26 +28,27 @@ calculateEngravingPrice(message, pricePerWord)
 function findLongestWord(stringAsk) {
 
     const modification = stringAsk.split(" ")
-    let max = 0;
+    let strLength = 0;
     for (let i = 0; i < modification.length; i++) {
-        max = modification[i].length
-        if (modification[i] > max)
-            max = modification[i].length
-        return max;
-    }
+        const max = modification[i].length
+        if (max > strLength)
+            strLength = max
 
+    }
+    return strLength;
 }
 findLongestWord("what's your favourite color")
+console.log(findLongestWord)
 
 /*Task 4*/
 const message = prompt("Введіть рядок :")
 const string = message.length
 function formatString(string) {
     if (string < 40) {
-        alert(string);
+        return string;
     }
     if (string > 40) {
-        alert(message.slice(0, 40) + `...`)
+        return message.slice(0, 40) + `...`;
     }
 }
 formatString(string)
