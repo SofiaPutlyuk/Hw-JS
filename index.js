@@ -5,12 +5,12 @@ const bankAccount = {
     accountNumber: 3,
     balance: 4000,
     deposit(sum) {
-        let quantity = bankAccount.balance + sum
-        console.log(quantity)
+      this.balance += sum
+        console.log(this.balance)
     },
     withdraw(sum) {
-        let amount = bankAccount.balance - sum
-        console.log(amount)
+       this.balance -= sum
+        console.log(this.balance)
     },
 }
 bankAccount.deposit(sum)
@@ -22,12 +22,7 @@ const weather = {
     humidity: 72,
     windSpeed: 23,
     climate(degrees) {
-        if (degrees < weather.temperature) {
-            return true;
-        }
-        if (degrees > weather.temperature) {
-            return false;
-        }
+      return degrees < weather.temperature;
     },
 
 }
@@ -39,16 +34,20 @@ const user = {
     name: "Sophia",
     email: " ",
     password: " ",
-    login(communication) {
+    login(communication,codeword) {
         if (communication.includes("@gmail.com")) {
             this.email = communication
+        }else{
+          console.log("Введіть правильну електронну пошту")
         }
-        if (this.password.length >= 4 && this.password.length <= 16) {
+        if (codeword.length >= 4 && codeword.length <= 16) {
             this.password = codeword
+        } else{
+          console.log("Пароль повинен містити від 4 до 16 символів")
         }
     },
 }
-user.login(communication)
+user.login(communication,codeword)
 console.log(user)
 /*Task 4 */
 const movie = {
@@ -57,15 +56,8 @@ const movie = {
     year: 2009,
     rating: 8.2,
     grading() {
-        if (movie.rating > 8) {
-            return true;
-        }
-        if (movie.rating < 8) {
-            return false;
-        }
-        if (movie.rating > 8) {
-            alert("Крутий фільм")
-        }
+      return movie.rating > 8;
+      
     }
 }
 movie.grading()
