@@ -1,13 +1,17 @@
 /*Task 1 */
-const fn = () => {
+const message = () => {
     console.log("Hello World!")
 }
-fn()
+message()
 /*Task 2 */
 const guessField = prompt("Введть число:")
-const checkGuess = (guessField) => {
+const guessNumber = Math.floor(Math.random() * 100) + 1
+const checkGuess = (guessField , guessNumber) => {
     if (guessField >= 1 && guessField <= 100) {
+      if (parseInt(guessField)===guessNumber){
         alert("Ви  вгадали")
+      }
+      
     } else {
         alert("Ви не вгадали")
     }
@@ -33,7 +37,7 @@ const calculateDiscountedPrice = (price, discount, callback) => {
     return callback(total);
 }
 const showDiscountedPrice = (amount) => {
-    return amount;
+    console.log(amount)
 }
 
 calculateDiscountedPrice(100, 10, showDiscountedPrice); 
