@@ -9,9 +9,14 @@ const bankAccount = {
     console.log(this.balance)
   },
   withdraw(sum) {
-    this.balance -= sum
-    console.log(this.balance)
+    if (this.balance < sum) {
+      console.log("Недостатньо коштів на рахунку")
+    } else {
+      this.balance -= sum
+      console.log(this.balance)
+    }
   },
+
 }
 bankAccount.deposit(sum)
 bankAccount.withdraw(sum)
@@ -32,15 +37,15 @@ const communication = prompt("Введіть електрону пошту :")
 const codeword = prompt("Введіть пароль: ")
 const user = {
   name: "Sophia",
-  email: " ",
-  password: " ",
+  email: "test@gmail.com ",
+  password: "test124",
   login(communication, codeword) {
     if (communication.includes("@gmail.com")) {
       this.email = communication
     } else {
       console.log("Введіть правильну електронну пошту")
     }
-    if (codeword.length >= 4 && codeword.length <= 16) {
+    if (communication == this.email && codeword == this.password) {
       this.password = codeword
     } else {
       console.log("Пароль повинен містити від 4 до 16 символів")
