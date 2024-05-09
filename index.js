@@ -7,15 +7,13 @@ message()
 const guessField = prompt("Введть число:")
 const guessNumber = Math.floor(Math.random() * 100) + 1
 const checkGuess = (guessField , guessNumber) => {
-    if (guessField >= 1 && guessField <= 100) {
+   
       if (parseInt(guessField)===guessNumber){
         alert("Ви  вгадали")
-      }
-      
-    } else {
+      } else {
         alert("Ви не вгадали")
     }
-}
+  }
 checkGuess(guessField)
 /*Task 4 */
 const applyCallbackToEachElement = (arr, callback) => {
