@@ -10,7 +10,7 @@ user.hobby = 'skydiving'
 user.premium = false
 const keys = Object.keys(user)
 for (let key of keys) {
-  console.log('Key:', key)
+  console.log('Key:', user[key])
 }
 /*Task 2 */
 
