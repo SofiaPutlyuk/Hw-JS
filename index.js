@@ -46,10 +46,9 @@ const user = {
       console.log("Введіть правильну електронну пошту")
     }
     if (communication == this.email && codeword == this.password) {
-      this.password = codeword
-    } else {
-      console.log("Пароль повинен містити від 4 до 16 символів")
+      return true;
     }
+    return false;
   },
 }
 user.login(communication, codeword)
