@@ -40,11 +40,6 @@ const user = {
   email: "test@gmail.com ",
   password: "test124",
   login(communication, codeword) {
-    if (communication.includes("@gmail.com")) {
-      this.email = communication
-    } else {
-      console.log("Введіть правильну електронну пошту")
-    }
     if (communication == this.email && codeword == this.password) {
       return true;
     }
