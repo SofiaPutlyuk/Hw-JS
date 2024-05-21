@@ -180,9 +180,9 @@ const account = {
    * Приймає суму і тип транзакції.
    */
   createTransaction(amount, type) {
-    const transactions = { amount, type }
-    this.transactions.push(transactions)
-    return transactions;
+    const transaction = { amount, type }
+    this.transactions.push(transaction)
+    return transaction;
   },
 
   /*
@@ -192,7 +192,7 @@ const account = {
    * після чого додає його в історію транзакцій
    */
   deposit(amount) {
-    this.balance = +amount
+    this.balance +=amount
     const transaction = this.createTransaction(amount, 'deposit')
     console.log(transaction)
   },
@@ -207,9 +207,13 @@ const account = {
    * про те, що зняття такої суми не можливо, недостатньо коштів.
    */
   withdraw(amount) {
-    this.balance = -amount
+    if (amount > this.balance) {
+      console.log('Зняття такої суми не можливо, недостатньо коштів.');
+    } else{
+    this.balance -=amount
     const transactionDraw = this.createTransaction(amount, 'withdraw')
     console.log(transactionDraw)
+    }
   },
 
 
