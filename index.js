@@ -53,7 +53,7 @@ const getNamesSortedByFriendsCount = usersFriends => {
     name: user.name,
     friendCount: user.friends.length
   }));
-  const friendTotal = countFriend.sort((a, b) => a.friendCount - b.friendCount)
+  const friendTotal = countFriend.sort((a, b) => a.friends.length- b.friends.length )
   console.log(friendTotal)
   /*Тут я отримую відсортовані імена користувачів */
   const nameSorted = friendTotal.map(user => user.name);
