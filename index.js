@@ -1,12 +1,13 @@
 /*Task 1 */
-const searchElementul = document.querySelectorAll('ul[id^="categories-"]');
-searchElementul.forEach(element => {
-    const result = element.querySelectorAll('li').length;
-    console.log(` Кількість елементів : ${result}`);
-});
-const searchTitle = document.querySelectorAll('h2')
-searchTitle.forEach(item => {
-    console.log('Категорія:', item.textContent)
+const searchElementUl = document.getElementById('categories')
+const categoriesItems = searchElementUl.querySelectorAll('li.item');
+console.log(`У списку ${categoriesItems.length} категорії.`);
+categoriesItems.forEach(item => {
+    const text = item.querySelector('h2').textContent
+    const elementLi = item.querySelectorAll('ul > li')
+    /*Я використала > для знаодження нащадка , читала одну з документацій :) */
+    console.log(`Категорія : ${text}`)
+    console.log(`Кількість елементів ${elementLi.length}`)
 })
 
 /*Task 2 */
@@ -19,11 +20,10 @@ const ingredients = [
     'Приправи',
 ];
 
-for (let elem of ingredients) {
-    const result = document.createElement('li')
-    result.textContent = elem
-    document.getElementById('ingredients').appendChild(result)
-}
+const searchBoxingredients = document.getElementById('ingredients')
+const htmlIngredients = ingredients.map(item => `<li>${item}</li>`).join('')
+/* Я , використала метод join() для того, щоб рядок HTML , якщо б я його не використала , я б отримала результаті масив рядків*/
+searchBoxingredients.insertAdjacentHTML('beforeend', htmlIngredients)
 /*Task 3 */
 const searchGallery = document.getElementById('gallery')
 const images = [
@@ -43,12 +43,8 @@ const images = [
         alt: 'Group of Horses Running',
     },
 ];
-images.forEach(element => {
-    const result = `
-   <img src = ${element.url} ${element.alt} />
-   `
-    searchGallery.insertAdjacentHTML('beforeend', result)
-})
+const htmlImg = images.map(elem => `<img src=${elem.url} alt="${elem.alt}"/>`).join('')
+searchGallery.insertAdjacentHTML('beforeend', htmlImg)
 /*Task 4 */
 const buttonDecrement = document.querySelector('button[data-action="decrement"]')
 const buttonIncrement = document.querySelector('button[data-action="increment"]')
