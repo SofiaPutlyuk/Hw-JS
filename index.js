@@ -21,9 +21,11 @@ const ingredients = [
 ];
 
 const searchBoxingredients = document.getElementById('ingredients')
-const htmlIngredients = ingredients.map(item => `<li>${item}</li>`).join('')
-/* Я , використала метод join() для того, щоб рядок HTML , якщо б я його не використала , я б отримала результаті масив рядків*/
-searchBoxingredients.insertAdjacentHTML('beforeend', htmlIngredients)
+ingredients.forEach(item => {
+    const li = document.createElement('li');
+    li.textContent = item;
+    searchBoxingredients.appendChild(li);
+});
 /*Task 3 */
 const searchGallery = document.getElementById('gallery')
 const images = [
@@ -51,9 +53,12 @@ const buttonIncrement = document.querySelector('button[data-action="increment"]'
 const searchSpan = document.getElementById('value')
 let counterValue = 0;
 buttonDecrement.addEventListener('click', function () {
-    searchSpan.textContent = counterValue -= 1
+    counterValue -= 1
+    searchSpan.textContent = counterValue
+
 })
 buttonIncrement.addEventListener('click', function () {
-    searchSpan.textContent = counterValue += 1
+    counterValue += 1
+    searchSpan.textContent = counterValue
 
 })
