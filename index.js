@@ -13,41 +13,34 @@ searchGallery.addEventListener('keydown', function (event) {
 })
 
 /*Task 2  */
-
-
 const searchButtoncreate = document.querySelector('button[data-action="render"]')
 const searchInput = document.querySelector('input')
-
 const container = document.getElementById('boxes')
 searchButtoncreate.addEventListener('click', function () {
     const amount = searchInput.value
     createBoxes(amount)
 })
-function createBoxes(amount) {
-
+function randomColor() {
     const red = Math.floor(Math.random() * 256)
     const green = Math.floor(Math.random() * 256)
     const blue = Math.floor(Math.random() * 256)
-    const resultColor = `rgb(${red}, ${green}, ${blue})`
+    return `rgb(${red}, ${green}, ${blue})`;
+}
+function createBoxes(amount) {
     for (let i = 0; i < amount; i++) {
         const createDiv = document.createElement('div')
         createDiv.id = "colorDiv"
-        createDiv.style.background = resultColor
+        createDiv.style.background = randomColor()
         let sizeDiv = 30 + i * 10
         createDiv.style.width = sizeDiv + 'px';
         createDiv.style.height = sizeDiv + 'px';
 
-        container.appendChild(createDiv)
+        container.append(createDiv)
     }
 
 }
-
-
 const searchButtondestroy = document.querySelector('button[data-action="destroy"]')
 searchButtondestroy.addEventListener('click', function () {
-
-
-
     function destroyBoxes() {
         const boxes = container.querySelectorAll('div');
 
