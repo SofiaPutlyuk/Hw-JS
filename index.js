@@ -22,8 +22,6 @@ searchBackdrop.addEventListener('click', function (event) {
 
 /*Task 3 */
 const searchAllinput = document.querySelectorAll('input[type="radio"]')
-console.log(searchAllinput)
-
 searchAllinput.forEach(element => {
     element.addEventListener('click', function () {
         document.body.style.background = this.value
@@ -33,30 +31,27 @@ searchAllinput.forEach(element => {
 const searchInput = document.getElementById('name-input')
 const searchSpan = document.getElementById('name-output')
 searchInput.addEventListener('input', function () {
-
+    searchSpan.style.display = 'inline'
     const result = searchInput.value
     if (result === '') {
-        searchSpan.style.display = 'inline'
         searchSpan.textContent = 'незнайомець'
     } else {
-        searchSpan.style.display = 'inline'
         searchSpan.textContent = result
     }
 })
 /*Task 4.2 */
 const searchInputvalidaton = document.getElementById('validation-input')
 const item = parseInt(searchInputvalidaton.getAttribute('data-length'))
-console.log(item)
 searchInputvalidaton.addEventListener('blur', function () {
     const inputValue = searchInputvalidaton.value
     const inputLength = inputValue.length
 
-    if (item === inputLength) {
-        searchInputvalidaton.classList.add('valid')
-
-
-    } else if (item < inputLength) {
+    if (item > inputLength) {
         searchInputvalidaton.classList.add('invalid')
+
+
+    } else {
+        searchInputvalidaton.classList.add('valid')
 
     }
 
@@ -65,7 +60,6 @@ searchInputvalidaton.addEventListener('blur', function () {
 /*Task 5 */
 const searchInputsize = document.getElementById('font-size-control')
 const searchSpantext = document.getElementById('text')
-
 searchInputsize.addEventListener('input', function (event) {
     const fontSize = parseInt(event.target.value)
     searchSpantext.style.fontSize = fontSize + 'px'
